@@ -1,0 +1,17 @@
+name: crystal-build
+version: 0.1.0
+
+authors:
+  - Sean Gregory <sean.christopher.gregory@gmail.com>
+
+crystal: 1.8.1
+
+dependencies:
+  barista:
+    gitlab: skinnyjames/barista
+
+targets:
+  crystal-builder:
+    main: src/crystal_builder.cr
+
+license: MIT

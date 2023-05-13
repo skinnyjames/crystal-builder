@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+IMAGE="${IMAGE:-crystal-builder}"
+TAG="$IMAGE:$1"
+
+./docker/scripts/bash-tpl ./docker/Dockerfile_$1.tpl | sh | cat > Dockerfile && docker build -t $TAG .
