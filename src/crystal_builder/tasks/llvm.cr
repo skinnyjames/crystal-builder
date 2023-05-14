@@ -1,4 +1,4 @@
-@[Barita::BelongsTo(FullBuilder)]
+@[Barista::BelongsTo(FullBuilder)]
 class Tasks::LLVM < Barista::Task
   include Common::Task
 

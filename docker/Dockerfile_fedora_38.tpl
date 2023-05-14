@@ -18,10 +18,14 @@ RUN dnf -y install \
   redhat-rpm-config \
   gc-devel \
   curl \
-  git 
+  git \
+  snapd
 
 LABEL org.opencontainers.image.authors="Sean Gregory. <sean.christopher.gregory@gmail.com>"
 
-.INCLUDE ./docker/snippets/crystal
+
+RUN curl -L https://github.com/crystal-lang/crystal/releases/download/1.8.2/crystal-1.8.2-1-linux-x86_64.tar.gz > crystal.tar.gz
+RUN tar -xvf crystal.tar.gz -C/usr/local --strip-components=1
+
 .INCLUDE ./docker/snippets/build_local.tpl
 .INCLUDE ./docker/snippets/docker.tpl
