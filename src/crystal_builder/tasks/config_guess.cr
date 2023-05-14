@@ -1,4 +1,4 @@
-@[Barista::BelongsTo(CrystalBuilder)]
+@[Barista::BelongsTo(FullBuilder)]
 class Tasks::ConfigGuess < Barista::Task
   include Common::Task
 

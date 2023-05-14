@@ -1,17 +1,8 @@
-@[Barista::BelongsTo(FullBuilder)]
-class Tasks::CrystalCompiler < Barista::Task
+@[Barista::BelongsTo(QuickBuilder)]
+class Tasks::CrystalQuickCompiler < Barista::Task
   include Common::Task
   
-  @@name = "crystal"
-
-  dependency BdwGC
-  dependency LibCMusl
-  dependency LibGMP
-  dependency LibPCRE2
-  dependency LibXML2
-  dependency LibYAML
-  dependency LibEvent
-
+  @@name = "crystal-quick"
 
   def build : Nil
     env = with_standard_compiler_flags(with_embedded_path(with_destdir))

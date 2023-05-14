@@ -1,10 +1,8 @@
-@[Barista::BelongsTo(CrystalBuilder)]
+@[Barista::BelongsTo(FullBuilder)]
 class Tasks::LibCMusl < Barista::Task
   include Common::Task
 
   @@name = "libc-musl"
-
-  dependency LLVM
 
   def build : Nil
     env = with_standard_compiler_flags(with_embedded_path(with_destdir))

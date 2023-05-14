@@ -1,4 +1,4 @@
-@[Barista::BelongsTo(CrystalBuilder)]
+@[Barista::BelongsTo(FullBuilder)]
 class Tasks::LibPCRE2 < Barista::Task
   include Common::Task
 
@@ -8,9 +8,9 @@ class Tasks::LibPCRE2 < Barista::Task
 
   def build : Nil
     env = with_standard_compiler_flags(with_embedded_path(with_destdir))
-
     command("./configure --prefix=#{install_dir}/embedded --disable-shared --disable-cpp --enable-jit --enable-utf --enable-unicode-properties", env: env)
-    command("./make", env: env)
+    command("make", env: env)
+    command("make install", env: env)
   end
 
   def configure : Nil

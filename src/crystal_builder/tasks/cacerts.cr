@@ -1,4 +1,4 @@
-@[Barista::BelongsTo(CrystalBuilder)]
+@[Barista::BelongsTo(FullBuilder)]
 class Tasks::Cacerts < Barista::Task
   include Common::Task
 

@@ -1,0 +1,9 @@
+RUN apt-get -y install \
+  libevent-dev \
+  libpcre2-dev \
+  libxml2-dev \
+  libyaml-dev \
+  libz-dev \
+  libssl-dev \
+  libgmp-dev \
+  libgmpxx4ldbl 

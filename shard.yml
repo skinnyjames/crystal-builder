@@ -9,6 +9,7 @@ crystal: 1.8.1
 dependencies:
   barista:
     gitlab: skinnyjames/barista
+    branch: main
 
 targets:
   crystal-builder:
