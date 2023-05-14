@@ -17,6 +17,11 @@ mkdir ./volume-cache
 docker run -v ./volume-cache:/cache -it crystal-builder:ubuntu_22.04
 LOG_LEVEL=debug ./crystal-builder -t quick 1.8.2
 mv /opt/barista/package/crystal-quick_1.8.2-1_amd64.deb /cache
+
+# validate the result
+docker run -v ./volume-cache:/cache -it ubuntu:22.04
+apt update -y && apt install /cache/crystal-quick_1.8.2-1_amd64.deb 
+crystal i
 ```
 
 ## Usage
