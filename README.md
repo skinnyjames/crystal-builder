@@ -1,12 +1,17 @@
 # crystal_builder
 
-Produce distributions of [Crystal](https://github.com/crystal-lang/crystal).
+Produce packages of [Crystal](https://github.com/crystal-lang/crystal).
 
-This is a work in progress and a draft idea.
+This is a work in progress and a draft idea.  Also please note that the resulting packages are **not** currently intended for distribution.
+
+Part of distributing is being compliant with different licenses, and the resulting License of the package depends on that.  
 
 ## Quickstart
 
 ```
+git clone https://github.com/skinnyjames/crystal-builder.git && cd crystal builder
+shards install
+
 ./build_image ubuntu_22.04
 mkdir ./volume-cache
 docker run -v ./volume-cache:/cache -it crystal-builder:ubuntu_22.04
@@ -38,6 +43,7 @@ The build image contains a builder binary that compiles crystal (and its depende
 The builder will build each dependency in isolation for caching.  To cache the build artifacts, provide a volume mount to the container.
 
 `mkdir ./volume-cache`
+
 `docker run -v ./volume-cache:/cache -it crystal-builder:ubuntu_22.04`
 
 The builder binary has a command `build` and it takes some options as well as a crystal sha/tag/branch as an argument.
