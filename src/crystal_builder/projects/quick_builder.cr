@@ -32,11 +32,12 @@ class QuickBuilder < Barista::Project
       runtime_dependency("libxml2-devel")
       runtime_dependency("libyaml-devel")
       runtime_dependency("openssl-devel")
-      runtime_dependency("pcre-devel")
-      runtime_dependency("llvm-devel")
-      runtime_dependency("llvm-static")
+      runtime_dependency("pcre2-devel")
+      runtime_dependency("llvm15-devel")
+      runtime_dependency("llvm15-static")
       runtime_dependency("libstdc++-static") 
       runtime_dependency("gc-devel")
+      runtime_dependency("libffi-devel")
     end
   end
 end

@@ -156,6 +156,6 @@ module Common::Project
 
   private def configure_excludes
     exclude("\.git*")
-    exclude("\.package-scripts")
+    exclude("\.package-scripts/**")
   end
 end
